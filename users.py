@@ -999,6 +999,23 @@ users = [{"id":1,"first_name":"Angeline","last_name":"Timothy","email":"atimothy
 {"id":999,"first_name":"Bryanty","last_name":"Rosenvasser","email":"brosenvasserrq@discovery.com","gender":"Male","ip_address":"186.72.250.20"},
 {"id":1000,"first_name":"Karita","last_name":"Truter","email":"ktruterrr@mapy.cz","gender":"Female","ip_address":"176.154.178.243"}]
 
+count_male = 0
+lenght = len(users)
+
+print ("Hisobot:\n")
+for i in users:
+
+    if i["gender"] == "Male":
+        count_male += 1  
+Male_percentage = (count_male / lenght) * 100
+print (f"- Erkaklar: {count_male} ta, {Male_percentage}%i")
+
+count_women = lenght - count_male
+
+Female_percentage = (count_women / lenght) * 100
+print (f"- Ayollar: {count_women} ta, {round(Female_percentage, 2)}%i") 
+
+
 
 # code yozing
 # natija quyidagicha chiqsin
