@@ -992,16 +992,54 @@ phones = [{"brand":"Samsung","model":"Samsung A777","date":2008},
 {"brand":"Motorola","model":"Motorola Motoluxe MT680","date":2012},
 {"brand":"Samsung","model":"Samsung Galaxy Note II CDMA","date":2012},
 {"brand":"Wiko","model":"Wiko Rainbow 4G","date":2014},
-{"brand":"Bird","model":"Bird MP300","date":0},
+{"brand":"Bird","model":"Bird MP300","date":2000},
 {"brand":"HTC","model":"HTC P3470","date":2008},
 {"brand":"LG","model":"LG GX300","date":2010},
 {"brand":"i-mobile","model":"i-mobile 520","date":2007},
 {"brand":"Emporia","model":"Emporia Connect","date":2012},
 {"brand":"Motorola","model":"Motorola Moto G9 (India)","date":2020}]
 
+print("Hisobot:")
+print("  - Brandalar:")
+
+# Bo'sh lug'at yaratamiz
+brand_count = {}
+
+# Har bir brendni sanash
+for i in phones:
+    brand = i["brand"]
+    if brand in brand_count: # Brand icihida borligini tekshirib olamiz 
+        brand_count[brand] += 1  # Agar brend sepda bo'lsa, sonini oshiramiz
+    else:
+        brand_count[brand] = 1  # Agar brend aepda bo'lmasa, uni qo'shamiz
+
+# Natijalarni chiqarish
+for brand, count in brand_count.items():
+    brand_percentage = (count / 1000) * 100
+    print(f"{brand}: {count} ta , Foiz: {(brand_percentage)}%i")
+
+print("\n")
+print("- Yillar (2000 - 2025)\n")
+
+# Ruyxat ichidan yilarni taminlab olish uchun bush dictionary yaratildi
+year_count = {}
+
+for i in phones:
+    years_phone = i["date"] # Yilllarni o'zgaruvchiga taminlab oldik
+    if years_phone in year_count: # O'zgaruvchilar ichida elementlar borligi tikshirib oldik
+        year_count[years_phone] += 1 # Agar bulsa qushib boradi
+    else :
+        year_count[years_phone] = 1
+for years_phone, count in year_count.items():
+    year_percentage = (count / 1000) * 100
+    print(f"{years_phone}, yilda: {count} ta, Foiz: {year_percentage}%i")
+
+
+
+
 # code yozing
 # natija quyidagicha chiqsin
-"""
+"""""
 Hisobot:
 - Brandlar:
     - Samsung telefonlar: 300 ta 30%i
